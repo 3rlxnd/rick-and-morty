@@ -29,6 +29,20 @@ main {
   gap: 10px;
 }
 
+#header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  align-self: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
 .title {
   padding: 10px 0;
 }

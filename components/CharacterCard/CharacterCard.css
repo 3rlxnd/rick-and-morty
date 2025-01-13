@@ -1,16 +1,17 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 .card {
   width: 300px;
+  border-radius: 8px;
   background-color: var(--color-secondary);
   transition: 0.2s;
 }
 
 .card:hover {
-  scale: 1.1;
+  scale: 1.05;
   z-index: 1;
 }
 

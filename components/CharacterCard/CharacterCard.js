@@ -1,6 +1,4 @@
 export default function CharacterCard(character) {
-    console.log(character);
-    
     let card = `<div class="card__image-container">
             <img
                 class="card__image"

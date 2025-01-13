@@ -10,9 +10,9 @@
 }
 
 :root {
-  --color-primary: rgb(51, 51, 51);
-  --color-secondary: #f6f6f6;
-  --color-background: #ccd1ff;
+  --color-primary: rgb(58, 58, 58);
+  --color-secondary: #dddddd;
+  --color-background: #2c2c2c;
   --font-family: system-ui;
 }
 
@@ -45,4 +45,5 @@ nav {
 
 .title {
   padding: 10px 0;
+  color: white;
 }

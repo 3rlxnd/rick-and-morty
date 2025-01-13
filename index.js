@@ -22,6 +22,7 @@ navigation.append(prevButton, pagination, nextButton)
 fetchCharacters(page)
 
 searchBar.addEventListener('submit', (event) => {
+  page = 1
   event.preventDefault()
   let formData = new FormData(event.target)
   let data = Object.fromEntries(formData)
@@ -40,6 +41,7 @@ prevButton.addEventListener('click', () => {
 })
 
 async function fetchCharacters(page) {
+  console.log(page)
   try {
     const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}&name=${searchQuery}`)
     const data = await response.json()
@@ -58,6 +60,7 @@ async function fetchCharacters(page) {
   } catch (error) {
     cardContainer.innerHTML = 'No results'
     pagination.textContent = 1 + '/' + 1
+
   }
 }
 

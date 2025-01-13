@@ -1,5 +1,7 @@
-import CharacterCard from '/CharacterCard.js';
-import { NavButton, NavPagination, SearchBar } from './Navigation.js';
+import CharacterCard from './components/CharacterCard/CharacterCard.js';
+import NavButton from './components/NavButton/NavButton.js';
+import NavPagination from './components/NavPagination/NavPagination.js';
+import SearchBar from './components/SearchBar/SearchBar.js';
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector('[data-js="search-bar-container"]');
@@ -25,6 +27,7 @@ searchBar.addEventListener('submit', (event) => {
   let data = Object.fromEntries(formData)
   searchQuery = data.query
   fetchCharacters(page)
+  formData.reset()
 })
 
 nextButton.addEventListener('click', () => {
@@ -47,6 +50,7 @@ async function fetchCharacters(page) {
     pagination.textContent = page + '/' + maxPage
     cardContainer.innerHTML = ''
     renderCards(characters)
+    return characters
   } catch (error) {
     console.log(error);
   }
@@ -54,7 +58,12 @@ async function fetchCharacters(page) {
 
 function renderCards(characters) {
   characters.map((character) => {
+    console.log(character);
+    
     const card = CharacterCard(character)
     cardContainer.append(card)
+    card.addEventListener('click', () => {
+      console.log(character)
+    })
   });
 }

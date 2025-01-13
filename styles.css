@@ -12,12 +12,14 @@
 :root {
   --color-primary: rgb(51, 51, 51);
   --color-secondary: #f6f6f6;
+  --color-background: #ccd1ff;
   --font-family: system-ui;
 }
 
 body {
   font-family: var(--font-family);
   color: var(--color-primary);
+  background-color: var(--color-background);
   padding: 20px;
 }
 

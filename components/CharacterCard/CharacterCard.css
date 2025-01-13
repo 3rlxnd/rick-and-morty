@@ -1,9 +1,17 @@
 .card-container {
-  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .card {
   width: 300px;
   background-color: var(--color-secondary);
+  transition: 0.2s;
+}
+
+.card:hover {
+  scale: 1.1;
+  z-index: 1;
 }
 
 .card__info {

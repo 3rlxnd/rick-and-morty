@@ -3,6 +3,7 @@
   background-color: var(--color-secondary);
   padding: 10px;
   text-transform: capitalize;
+  border-radius: 8px;
 }
 
 .button:hover {

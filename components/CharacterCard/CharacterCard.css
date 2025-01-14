@@ -2,16 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  /* justify-content: center; */
+  /* color: white; */
 }
 .card {
   width: 300px;
-  border-radius: 8px;
   background-color: var(--color-secondary);
   transition: 0.2s;
+  border-radius: 20px;
 }
 
 .card:hover {
-  scale: 1.05;
+  scale: 1.02;
   z-index: 1;
 }
 
@@ -19,10 +21,25 @@
   display: grid;
   grid-template-columns: auto 1fr;
 }
+
+.card__title {
+  /* height: 100px; */
+  padding: 20px;
+  color: var(--color-primary);
+  /* text-shadow: 0px 0px 5px gray; */
+}
+
+.card__image {
+  width:300px;
+}
 .card__content {
-  padding: 10px 20px 20px;
+  padding: 20px;
   display: grid;
   gap: 20px;
+}
+
+.card__info-title {
+  font-weight: 600;
 }
 
 .card__info-description {

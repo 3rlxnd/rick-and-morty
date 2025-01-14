@@ -6,8 +6,9 @@ export default function SearchBar() {
     name="query"
     class="search-bar__input"
     type="text"
-    placeholder="search characters"
+    placeholder="Search Characters..."
     aria-label="character name"
+    data-js="search-bar-input"
   />
   <button class="search-bar__button" aria-label="search for character">
     <img

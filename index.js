@@ -28,20 +28,26 @@ searchBar.addEventListener('submit', (event) => {
   let data = Object.fromEntries(formData)
   searchQuery = data.query
   fetchCharacters(page)
+  searchBar.reset()
 })
 
 nextButton.addEventListener('click', () => {
-  page < maxPage ? page++ : null
-  fetchCharacters(page)
+  if (page < maxPage) {
+    page++
+    document.documentElement.scrollTop = 0
+    fetchCharacters(page)
+  }
 })
 
 prevButton.addEventListener('click', () => {
-  page > 1 ? page-- : null
-  fetchCharacters(page)
+  if (page > 1) {
+    page--
+    document.documentElement.scrollTop = 0
+    fetchCharacters(page)
+  }
 })
 
 async function fetchCharacters(page) {
-  console.log(page)
   try {
     const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}&name=${searchQuery}`)
     const data = await response.json()
@@ -54,7 +60,7 @@ async function fetchCharacters(page) {
 
     if (characters.length > 0) {
       renderCards(characters)
-      return characters
+      // return characters
     }
 
   } catch (error) {
@@ -69,8 +75,10 @@ function renderCards(characters) {
 
     const card = CharacterCard(character)
     cardContainer.append(card)
+
     card.addEventListener('click', () => {
-      console.log(character)
+      window.open(character.image, "_blank")
     })
+
   });
 }

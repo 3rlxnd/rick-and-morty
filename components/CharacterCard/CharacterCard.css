@@ -3,35 +3,40 @@
   flex-wrap: wrap;
   gap: 20px;
   /* justify-content: center; */
-  /* color: white; */
 }
+
 .card {
-  width: 300px;
+  width: 250px;
   background-color: var(--color-secondary);
   transition: 0.2s;
-  border-radius: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .card:hover {
   scale: 1.02;
   z-index: 1;
+  background-color: #eeeeee;
+  box-shadow: 0px 0px 10px rgb(50, 50, 50);
 }
 
 .card__info {
   display: grid;
   grid-template-columns: auto 1fr;
+  padding: 20px;
 }
 
 .card__title {
-  /* height: 100px; */
   padding: 20px;
   color: var(--color-primary);
-  /* text-shadow: 0px 0px 5px gray; */
 }
 
 .card__image {
-  width:300px;
+  width: 250px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
+
 .card__content {
   padding: 20px;
   display: grid;

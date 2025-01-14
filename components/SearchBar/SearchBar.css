@@ -8,6 +8,11 @@
   display: grid;
   grid-template-columns: 1fr 24px;
   border-radius: 8px;
+  transition: 0.2s;
+}
+
+.search-bar:hover {
+  background-color: #eeeeee;
 }
 
 .search-bar__input {

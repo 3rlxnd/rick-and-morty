@@ -10,9 +10,10 @@
 }
 
 :root {
+  --border-radius: 8px;
   --color-primary: rgb(53, 53, 53);
   --color-secondary: #d5d5d5;
-  --color-3: #353535;
+  --color-3: #ebbfbf;
   --color-background: #aa5d5d;
   --font-family: system-ui;
 }
@@ -37,6 +38,17 @@ main {
 }
 
 nav {
+  align-self: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+
+.no-result {
   align-self: center;
   padding: 20px;
   display: flex;

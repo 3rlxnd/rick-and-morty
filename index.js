@@ -64,7 +64,11 @@ async function fetchCharacters(page) {
     }
 
   } catch (error) {
-    cardContainer.innerHTML = 'No results'
+    cardContainer.innerHTML = ''
+    let text = document.createElement('p')
+    text.classList.add('no-result')
+    text.textContent = 'No Results found!'
+    cardContainer.append(text)
     pagination.textContent = 1 + '/' + 1
 
   }

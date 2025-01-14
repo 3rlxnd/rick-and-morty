@@ -18,7 +18,6 @@ let prevButton = NavButton('prev')
 let pagination = NavPagination();
 
 searchBarContainer.append(searchBar)
-navigation.append(prevButton, pagination, nextButton)
 fetchCharacters(page)
 
 searchBar.addEventListener('submit', (event) => {
@@ -59,11 +58,15 @@ async function fetchCharacters(page) {
     cardContainer.innerHTML = ''
 
     if (characters.length > 0) {
+      navigation.append(prevButton, pagination, nextButton)
       renderCards(characters)
       // return characters
     }
 
   } catch (error) {
+    prevButton.remove()
+    pagination.remove()
+    nextButton.remove()
     cardContainer.innerHTML = ''
     let text = document.createElement('p')
     text.classList.add('no-result')
@@ -78,7 +81,7 @@ function renderCards(characters) {
   characters.forEach(character => {
     const card = CharacterCard(character)
     cardContainer.append(card)
-  
+
     card.addEventListener('click', () => {
       window.open(character.image, "_blank")
     })

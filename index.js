@@ -75,14 +75,12 @@ async function fetchCharacters(page) {
 }
 
 function renderCards(characters) {
-  characters.map((character) => {
-
+  characters.forEach(character => {
     const card = CharacterCard(character)
     cardContainer.append(card)
-
+  
     card.addEventListener('click', () => {
       window.open(character.image, "_blank")
     })
-
   });
 }
